@@ -36,7 +36,9 @@ const forecast = (x,y, callback) => {
             }
         
              else {
-                 callback(undefined, 'It is currently ' +body.currently.temperature + ' degree out. There is a '+ body.currently.precipProbability+ ' % of rain.') 
+                 callback(undefined, body.daily.data[0].summary + 'It is currently ' +body.currently.temperature + 
+                 ' degree out. There is a '+ body.currently.precipProbability+ ' % of rain. \n Highest temparature will be: ' +body.daily.data[0].temperatureHigh +
+                 ' degree, lowest temparature :  '+  body.daily.data[0].temperatureLow + '  degree.')
         }
             
         })
